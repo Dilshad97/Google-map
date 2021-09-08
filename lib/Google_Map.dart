@@ -50,19 +50,19 @@ class _Map_locatorState extends State<Map_locator> {
 
     return SafeArea(child: Scaffold(
 
-      body: GoogleMap(
-        // markers: Set<Marker>.of(markers.values),
-        mapType: MapType.normal,
-        initialCameraPosition: CameraPosition(target: LatLng(23.0225,72.5714) ,zoom: 13),
-    onMapCreated: (GoogleMapController controller) {
-      _controller.complete(controller);
-    },
-        onTap: (LatLng latLng) {
-          _markers.add(Marker(markerId: MarkerId('mark'), position: latLng));
-          setState(() {});
-        } ,
-        markers: Set<Marker>.of(_markers),
-    )
+        body: GoogleMap(
+          // markers: Set<Marker>.of(markers.values),
+          mapType: MapType.normal,
+          initialCameraPosition: CameraPosition(target: LatLng(23.0225,72.5714) ,zoom: 13),
+          onMapCreated: (GoogleMapController controller) {
+            _controller.complete(controller);
+          },
+          onTap: (LatLng latLng) {
+            _markers.add(Marker(markerId: MarkerId('mark'), position: latLng));
+            setState(() {});
+          } ,
+          markers: Set<Marker>.of(_markers),
+        )
 
 
 
